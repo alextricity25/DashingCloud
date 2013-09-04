@@ -10,15 +10,15 @@ This is a Rails 4 demo application using [dashing-rails](https://github.com/gott
 
 1. Bundle install
 
-    bundle
+	    bundle
 
 2. Run Rails server (uses [Puma](https://github.com/puma/puma))
 
-    rails s
+		rails s
 
 3. Run Redis
 
-    redis-server /usr/local/etc/redis.conf
+		redis-server /usr/local/etc/redis.conf
 
 4. Go to [http://localhost:3000/dashing](http://localhost:3000/dashing) to see the sample dashboard
 
