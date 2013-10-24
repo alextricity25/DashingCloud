@@ -1,0 +1,628 @@
+
+
+Started GET "/" for 10.4.229.194 at 2013-10-24 15:18:43 -0500
+
+ActiveRecord::PendingMigrationError (Migrations are pending; run 'rake db:migrate RAILS_ENV=development' to resolve this issue.):
+  activerecord (4.0.0) lib/active_record/migration.rb:379:in `check_pending!'
+  activerecord (4.0.0) lib/active_record/migration.rb:366:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__2359847155332880764__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  puma (2.6.0) lib/puma/server.rb:486:in `handle_request'
+  puma (2.6.0) lib/puma/server.rb:357:in `process_client'
+  puma (2.6.0) lib/puma/server.rb:250:in `block in run'
+  puma (2.6.0) lib/puma/thread_pool.rb:92:in `call'
+  puma (2.6.0) lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.9ms)
+  [1m[36m (61.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (40.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20130904205314)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20130904205314"]]
+  [1m[36m (45.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 10.4.229.194 at 2013-10-24 15:19:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/railties-4.0.0/lib/rails/templates/rails/welcome/index.html.erb (25.5ms)
+Completed 200 OK in 78ms (Views: 58.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dashing" for 10.4.229.194 at 2013-10-24 15:19:40 -0500
+Processing by Dashing::DashboardsController#index as HTML
+  Rendered dashing/dashboards/sample.html.erb within layouts/dashing/dashboard (0.6ms)
+Completed 200 OK in 2234ms (Views: 2232.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:42 -0500
+
+
+
+
+
+
+
+
+Started GET "/assets/moment.min.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:42 -0500
+Started GET "/assets/jquery.gridster.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:42 -0500
+Started GET "/assets/jquery.leanModal.min.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:42 -0500
+Started GET "/assets/jquery.timeago.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:42 -0500
+
+
+Started GET "/assets/rickshaw.min.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:42 -0500
+
+
+Started GET "/assets/batman.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:42 -0500
+
+
+Started GET "/assets/batman.jquery.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/jquery.knob.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/d3.v2.min.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/es5-shim.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/dashing/dashing-src.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/dashing/dashing.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/dashing.gridster.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/default_widgets/clock/clock.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/default_widgets/comments/comments.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/default_widgets/graph/graph.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/dashing/events" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+Processing by Dashing::EventsController#index as text/event-stream
+
+
+
+
+Started GET "/assets/default_widgets/iframe/iframe.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/default_widgets/number/number.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/default_widgets/list/list.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/default_widgets/meter/meter.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+Started GET "/assets/default_widgets/image/image.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/font-awesome.css?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/jquery.gridster.css?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/default_widgets/clock/clock.css?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/default_widgets/comments/comments.css?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/default_widgets/graph/graph.css?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/default_widgets/iframe/iframe.css?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/default_widgets/image/image.css?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/default_widgets/list/list.css?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/default_widgets/meter/meter.css?body=1" for 10.4.229.194 at 2013-10-24 15:19:43 -0500
+
+
+Started GET "/assets/default_widgets/number/number.css?body=1" for 10.4.229.194 at 2013-10-24 15:19:44 -0500
+
+
+Started GET "/assets/default_widgets/text/text.css?body=1" for 10.4.229.194 at 2013-10-24 15:19:44 -0500
+
+
+Started GET "/assets/default_widgets/index.css?body=1" for 10.4.229.194 at 2013-10-24 15:19:44 -0500
+
+
+Started GET "/assets/widgets/index.css?body=1" for 10.4.229.194 at 2013-10-24 15:19:44 -0500
+
+
+Started GET "/assets/dashing/application.css?body=1" for 10.4.229.194 at 2013-10-24 15:19:44 -0500
+
+
+Started GET "/assets/dashing/dashing.css?body=1" for 10.4.229.194 at 2013-10-24 15:19:44 -0500
+
+
+Started GET "/assets/default_widgets/text/text.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:44 -0500
+
+
+Started GET "/assets/default_widgets/index.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:44 -0500
+
+
+Started GET "/assets/widgets/index.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:44 -0500
+
+
+Started GET "/assets/dashing/application.js?body=1" for 10.4.229.194 at 2013-10-24 15:19:44 -0500
+
+
+Started GET "/dashing/widgets/text.html" for 10.4.229.194 at 2013-10-24 15:19:44 -0500
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"text"}
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/dashing-rails-1.0.1/app/views/dashing/default_widgets/text/text.html (0.5ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+
+Started GET "/dashing/widgets/meter.html" for 10.4.229.194 at 2013-10-24 15:19:44 -0500
+
+Processing by Dashing::WidgetsController#show as HTML
+Started GET "/dashing/widgets/graph.html" for 10.4.229.194 at 2013-10-24 15:19:44 -0500
+  Parameters: {"name"=>"meter"}
+
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"graph"}
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/dashing-rails-1.0.1/app/views/dashing/default_widgets/meter/meter.html (0.3ms)
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/dashing-rails-1.0.1/app/views/dashing/default_widgets/graph/graph.html (0.4ms)
+Started GET "/dashing/widgets/number.html" for 10.4.229.194 at 2013-10-24 15:19:44 -0500
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+Started GET "/dashing/widgets/list.html" for 10.4.229.194 at 2013-10-24 15:19:44 -0500
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#show as HTML
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"number"}
+  Parameters: {"name"=>"list"}
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/dashing-rails-1.0.1/app/views/dashing/default_widgets/number/number.html (0.5ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/dashing-rails-1.0.1/app/views/dashing/default_widgets/list/list.html (0.4ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/favicon.ico" for 10.4.229.194 at 2013-10-24 15:19:44 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/favicon.ico"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  puma (2.6.0) lib/puma/server.rb:486:in `handle_request'
+  puma (2.6.0) lib/puma/server.rb:357:in `process_client'
+  puma (2.6.0) lib/puma/server.rb:250:in `block in run'
+  puma (2.6.0) lib/puma/thread_pool.rb:92:in `call'
+  puma (2.6.0) lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.7ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (61.0ms)
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 10.4.229.194 at 2013-10-24 15:19:44 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/fontawesome-webfont.woff"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  puma (2.6.0) lib/puma/server.rb:486:in `handle_request'
+  puma (2.6.0) lib/puma/server.rb:357:in `process_client'
+  puma (2.6.0) lib/puma/server.rb:250:in `block in run'
+  puma (2.6.0) lib/puma/thread_pool.rb:92:in `call'
+  puma (2.6.0) lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (23.8ms)
+
+
+Started GET "/assets/fontawesome-webfont.ttf" for 10.4.229.194 at 2013-10-24 15:19:44 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/fontawesome-webfont.ttf"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  puma (2.6.0) lib/puma/server.rb:486:in `handle_request'
+  puma (2.6.0) lib/puma/server.rb:357:in `process_client'
+  puma (2.6.0) lib/puma/server.rb:250:in `block in run'
+  puma (2.6.0) lib/puma/thread_pool.rb:92:in `call'
+  puma (2.6.0) lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (45.7ms)
+
+
+Started GET "/assets/fontawesome-webfont.svg" for 10.4.229.194 at 2013-10-24 15:19:45 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/fontawesome-webfont.svg"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  puma (2.6.0) lib/puma/server.rb:486:in `handle_request'
+  puma (2.6.0) lib/puma/server.rb:357:in `process_client'
+  puma (2.6.0) lib/puma/server.rb:250:in `block in run'
+  puma (2.6.0) lib/puma/thread_pool.rb:92:in `call'
+  puma (2.6.0) lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (22.6ms)
+Completed 401 Unauthorized in 146320ms
+
+
+Started GET "/dashing" for 10.4.229.194 at 2013-10-24 15:25:38 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Dashing::DashboardsController#index as HTML
+  Rendered dashing/dashboards/sample.html.erb within layouts/dashing/dashboard (27.9ms)
+Completed 200 OK in 318ms (Views: 296.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+
+
+
+
+
+
+
+
+Started GET "/assets/jquery.knob.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+Started GET "/assets/jquery.leanModal.min.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+Started GET "/assets/jquery.timeago.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+Started GET "/assets/moment.min.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+
+
+Started GET "/assets/rickshaw.min.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+
+
+Started GET "/assets/batman.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+
+
+Started GET "/assets/batman.jquery.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+
+
+Started GET "/assets/d3.v2.min.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+
+
+Started GET "/assets/es5-shim.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+
+
+Started GET "/assets/dashing/dashing-src.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+
+
+Started GET "/assets/jquery.gridster.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+
+
+Started GET "/dashing/events" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+
+
+Processing by Dashing::EventsController#index as text/event-stream
+
+
+Started GET "/assets/default_widgets/graph/graph.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+
+
+
+
+Started GET "/assets/dashing.gridster.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+Started GET "/assets/default_widgets/comments/comments.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+Started GET "/assets/dashing/dashing.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+
+
+Started GET "/assets/default_widgets/iframe/iframe.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+
+
+Started GET "/assets/default_widgets/image/image.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+
+
+Started GET "/assets/default_widgets/list/list.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+
+
+Started GET "/assets/default_widgets/meter/meter.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:39 -0500
+
+
+Started GET "/assets/default_widgets/number/number.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+
+
+Started GET "/assets/default_widgets/text/text.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+
+
+Started GET "/assets/default_widgets/index.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+
+
+Started GET "/assets/widgets/index.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+
+
+Started GET "/assets/default_widgets/clock/clock.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+
+
+Started GET "/assets/dashing/application.js?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+
+
+Started GET "/assets/default_widgets/clock/clock.css?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+
+
+Started GET "/assets/font-awesome.css?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+
+
+Started GET "/assets/jquery.gridster.css?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+
+
+Started GET "/assets/default_widgets/comments/comments.css?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+
+
+
+
+Started GET "/assets/default_widgets/graph/graph.css?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+Started GET "/assets/default_widgets/iframe/iframe.css?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+
+
+Started GET "/assets/default_widgets/image/image.css?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+
+
+Started GET "/assets/default_widgets/list/list.css?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+
+
+Started GET "/assets/default_widgets/meter/meter.css?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+
+
+Started GET "/assets/default_widgets/number/number.css?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+
+
+Started GET "/assets/default_widgets/text/text.css?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+
+
+Started GET "/assets/default_widgets/index.css?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+
+
+Started GET "/assets/widgets/index.css?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+
+
+Started GET "/assets/dashing/application.css?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+
+
+
+
+Started GET "/assets/dashing/dashing.css?body=1" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+Started GET "/dashing/widgets/text.html" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"text"}
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/dashing-rails-1.0.1/app/views/dashing/default_widgets/text/text.html (0.3ms)
+
+
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+Started GET "/dashing/widgets/list.html" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+Started GET "/dashing/widgets/meter.html" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+Processing by Dashing::WidgetsController#show as HTML
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"list"}
+  Parameters: {"name"=>"meter"}
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/dashing-rails-1.0.1/app/views/dashing/default_widgets/list/list.html (0.5ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/dashing-rails-1.0.1/app/views/dashing/default_widgets/meter/meter.html (0.4ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dashing/widgets/number.html" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"number"}
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/dashing-rails-1.0.1/app/views/dashing/default_widgets/number/number.html (0.4ms)
+Started GET "/dashing/widgets/graph.html" for 10.4.229.194 at 2013-10-24 15:25:40 -0500
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+Processing by Dashing::WidgetsController#show as HTML
+  Parameters: {"name"=>"graph"}
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/dashing-rails-1.0.1/app/views/dashing/default_widgets/graph/graph.html (0.4ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 10.4.229.194 at 2013-10-24 15:25:41 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/fontawesome-webfont.woff"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  puma (2.6.0) lib/puma/server.rb:486:in `handle_request'
+  puma (2.6.0) lib/puma/server.rb:357:in `process_client'
+  puma (2.6.0) lib/puma/server.rb:250:in `block in run'
+  puma (2.6.0) lib/puma/thread_pool.rb:92:in `call'
+  puma (2.6.0) lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (61.4ms)
+
+
+Started GET "/assets/fontawesome-webfont.ttf" for 10.4.229.194 at 2013-10-24 15:25:41 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/fontawesome-webfont.ttf"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  puma (2.6.0) lib/puma/server.rb:486:in `handle_request'
+  puma (2.6.0) lib/puma/server.rb:357:in `process_client'
+  puma (2.6.0) lib/puma/server.rb:250:in `block in run'
+  puma (2.6.0) lib/puma/thread_pool.rb:92:in `call'
+  puma (2.6.0) lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (22.5ms)
+
+
+Started GET "/assets/fontawesome-webfont.svg" for 10.4.229.194 at 2013-10-24 15:25:41 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/fontawesome-webfont.svg"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  puma (2.6.0) lib/puma/server.rb:486:in `handle_request'
+  puma (2.6.0) lib/puma/server.rb:357:in `process_client'
+  puma (2.6.0) lib/puma/server.rb:250:in `block in run'
+  puma (2.6.0) lib/puma/thread_pool.rb:92:in `call'
+  puma (2.6.0) lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (44.5ms)
+Completed 401 Unauthorized in 10224ms

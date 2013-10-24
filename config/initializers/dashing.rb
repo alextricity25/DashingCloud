@@ -50,5 +50,5 @@ Dashing.configure do |config|
 
   # List of Devise models that should access the whole dashboard.
   # List the models. E.g: '[ "User", "Admin" ]'
-  config.devise_allowed_models = ["User"]
+  #config.devise_allowed_models = ["User"]
 end

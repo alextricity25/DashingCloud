@@ -32,6 +32,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'dashing-rails', '1.0.2.dev'
+gem 'dashing-rails', '1.0.1'
 gem 'puma'
 gem 'devise'
